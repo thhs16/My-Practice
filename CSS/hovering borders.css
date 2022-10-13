@@ -1,0 +1,19 @@
+/*The change of colors when hover for borders of movies' posters of home web*/
+
+a.Raya:hover img{
+	
+	border-color: white;   /*for Raya and the last dragon home display border*/
+	
+}
+
+a.BH6:hover img{
+	
+	border-color: white;   /*for Big Hero 6*/
+	
+}
+
+a.sing2:hover img{
+	
+	border-color: white;   /*for Sing 2*/
+	
+}
