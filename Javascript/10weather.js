@@ -1,3 +1,5 @@
+// This project hasn't finished yet
+
 let cityName = 'Yangon';
 
 const weatherInfo={
