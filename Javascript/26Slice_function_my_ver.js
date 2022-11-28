@@ -1,4 +1,4 @@
-
+// weak point: main array changed after programme 
 
           const myArr = ['a','b','c','d','e','f','g'];
 
@@ -15,11 +15,13 @@
 
 
                               function numString(elem){
+                                        // console.log('from string');
+
                                         let sElem = elem.toLowerCase();
-                                        let returnVal = 0;
-                                        console.log('from string');
+                                        
                                         // searching user demand
                                         let i=0;
+                                        let returnVal = 0
                                         for(i; i<myArr.length; i++){
                                                   if(sElem == myArr[i]){
                                                             returnVal = 1;
@@ -42,28 +44,32 @@
 
 
 
-                    function numSlice(elem){
+                              function numSlice(elem){
 
-                              console.log('from number');
+                                        // console.log('from number');
 
-                              if((elem > 0) && (elem <= myArr.length)){
+                                        if((elem > 0) && (elem <= myArr.length)){
 
-                                        for(let i=0; i<=elem; i++){
-                                                  myArr.shift();
-                                        }
-                                        console.log(myArr);
+                                                  for(let i=0; i<=elem; i++){
+                                                            myArr.shift();
+                                                  }
+                                                  console.log(myArr);
                                         
-                              }else if(( elem < 0) && (elem >= -(myArr.length))){
+                                        }else if(( elem < 0) && (elem >= -(myArr.length))){
 
-                                        for(let i=0; i>=elem; i--){
-                                                  myArr.pop();
+                                                  for(let i=0; i>=elem; i--){
+                                                            myArr.pop();
+                                                  }
+                                                  console.log(myArr);
+
+                                        }else{
+                                                  console.log('The index you typed is out of range.')
                                         }
-                                        console.log(myArr);
-
-                              }else{
-                                        console.log('The index you typed is out of range.')
                               }
-                    }
           }
 
           mySlice(3);
+          
+          // weak point
+          console.log('Hi')
+          console.log(myArr);
