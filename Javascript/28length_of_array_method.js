@@ -1,3 +1,4 @@
+// left to push commit
 
           const bTypes = ['novel', 'biography', 'auto-biography', 'poem', 'essay'];
 
@@ -14,7 +15,7 @@
                     return a;
           }
 
-          console.log(bTypes[5]);
+          // console.log(bTypes[5]);
 
           let lenFun = lengthArray(bTypes);
           console.log(lenFun);
