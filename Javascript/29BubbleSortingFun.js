@@ -1,22 +1,19 @@
 // weak point : main array has changed
+// Note | To reduce looping, we've got to adjust the value of len
 
           function bubbleSort(arr, len){
 
-                    let a=0;
                     for(let i=0; i< len-1; i++){
                               
-                              let index=0;
-                                        for(let k=0 ; k< len-i-1 ; k++){
-                                                  let eleAtI = arr[index];
+                              for(let k=0 ; k< len-i-1 ; k++){
 
-                                                  if(arr[index] > arr[index+1]){
-                                                            arr[index] = arr[index+1];
-                                                            arr[index+1] = eleAtI;  
-                                                  }
-                                                  console.log('loop:', i,a, arr);
-                                                  index++;
-                                                  a++
+
+                                        let eleAtI = arr[k];
+                                        if(arr[k] > arr[k+1]){
+                                                  arr[k] = arr[k+1];
+                                                  arr[k+1] = eleAtI;  
                                         }
+                              }
                     }
           }
 
@@ -35,8 +32,12 @@
 
 
           const myArr = [20, 10, 1, 4, 89, 12];
-
+          const newArr = [99,3,6,78,13,15,33,2,0];
 
           let arrSize = arrLength(myArr);
           bubbleSort(myArr, arrSize);
-          console.log('\n',myArr);
+          console.log('\n','myArr:',myArr);
+
+          let newSize = arrLength(newArr);
+          bubbleSort(newArr, newSize);
+          console.log('\n','newArr:',newArr);
