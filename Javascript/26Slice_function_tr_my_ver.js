@@ -23,11 +23,19 @@
           }
 
           function numSlice(data){
-                    for(let i=data+1; i<myArr.length; i++){
+              // Adding postive and negative value's option
+              if(data >0){
+                     for(let i=data+1; i<myArr.length; i++){
                               newArr[index] = myArr[i];
                               index++;
-                    }
-                    return 0;
+                     }
+              }else{
+                     for(let i=0; i<myArr.length+data-1; i++){ // -6 | -4 --> index:1 --> i<2
+                            newArr[index] = myArr[i];
+                            index++;
+                     }
+              }
+              return 0;
           }
 
           function mySlice(data){
@@ -39,7 +47,7 @@
                     return newArr;
           }
 
-          let sliceRes = mySlice(5);
+          let sliceRes = mySlice(0); //-2
 
           if(sliceRes == 0){  // can't be === cuz' [] might not be number type
                               console.log('The data is not in the array.')
