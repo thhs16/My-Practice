@@ -33,11 +33,16 @@
 
           const myArr = [20, 10, 1, 4, 89, 12];
           const newArr = [99,3,6,78,13,15,33,2,0];
+          const strArr = ['Jay', 'james', 'Steven', 'lauv']
 
           let arrSize = arrLength(myArr);
           bubbleSort(myArr, arrSize);
           console.log('\n','myArr:',myArr);
 
-          let newSize = arrLength(newArr);
+          let newSize = arrLength(newArr); //len:9 //index:8 //num of times to work: 7
           bubbleSort(newArr, newSize);
           console.log('\n','newArr:',newArr);
+
+           let strSize = arrLength(strArr); 
+          bubbleSort(strArr, strSize); // Sorted by Ascii values
+          console.log('\n','strArr:',strArr);
