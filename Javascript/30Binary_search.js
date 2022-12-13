@@ -1,28 +1,32 @@
 // This is not finished yet.
           function binarySearch(arr, len, tofind){
                     
-                    // let newData=[];
+                    // function cloneArr(Oarr){
+                    //     return Oarr;
+                    // }
+                    let newArray = arr;
 
                     let mid = Math.floor(   len /2); // mid = 50
-                    for(mid; mid>=0; mid=mid/2){
-                        if(tofind == arr[mid]){
+                    for(mid; mid>=0; mid=Math.floor(len/2)){
+                        if(tofind == newArray[mid]){
                             
                             console.log(`Your data ${tofind} has found at index ${mid}.`)
                             break;
 
-                        }else if(tofind < arr[mid]){
+                        }else if(tofind < newArray[mid]){
 
                             let negMid = -(len-mid); //-5
-                            sliceObj.mySlice(negMid, arr, len);
-                            arr = sliceObj.newArr;
-                            console.log('newData:',arr);
+                            sliceObj.mySlice(negMid, newArray, len);
+                            newArray = sliceObj.newArr;
+                            console.log('newData:',newArray);
                         
                         }else{
 
-                            sliceObj.mySlice(mid, arr, len);
-                            arr = sliceObj.newArr;
-                            console.log('newData:',arr);
+                            sliceObj.mySlice(mid, newArray, len);    // len problem  #1
+                            newArray = sliceObj.newArr; // mySlice problem   #2
+                            console.log('newData:',newArray);
                         }
+                        len = lenOfArr(newArray)-1;
                     }
           }
 
@@ -45,10 +49,7 @@
                        this.newIndex = -1;
   
                       if(typeof(data) === 'string'){
-                                this.strSlice(data, arr, len);
-                      }else if(data == 0){
-                                this.newArr = 'The data is not found.'
-                                
+                                this.strSlice(data, arr, len);         
                       }else{
                                 this.numSlice(data, arr, len);
                       }
@@ -74,8 +75,8 @@
             numSlice(data, arr, len){
   
   
-                      if(data >0){
-                             for(let i=data+1 ; i<len ; i++){
+                      if(data >=0){
+                             for(let i=data+1 ; i<=len ; i++){
                                       this.newArr[this.index] = arr[i];
                                       this.index++;
                              }
@@ -89,10 +90,14 @@
           }
 
 
-let toFInd = 40;
+let toFInd = 100;
 let myArr = [10,20,30,40,50,60,70,80,90,100]; //10
 let length = lenOfArr(myArr);
 const sliceObj = new Slice;
 
 let result = binarySearch(myArr, length-1, toFInd);
-console.log('length:',length);   
+// console.log('length:',length);
+console.log(myArr);
+
+// sliceObj.mySlice(0, myArr, length-1);
+// console.log(sliceObj.newArr);
