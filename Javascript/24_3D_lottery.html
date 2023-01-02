@@ -6,53 +6,19 @@
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>3D lottery</title>
-          <style>
-                    * {
-                              margin: 0;
-                              padding: 0;
-                    }
-
-                    input {
-                              display: block;
-                              margin: 20px;
-                              width: 200px;
-                    }
-
-                    label {
-                              display: block;
-                              margin-left: 20px;
-                              margin-top: -5px;
-                              margin-bottom: -15px;
-                              font-weight: bold;
-                    }
-
-                    input[type="submit"] {
-                              width: 50px;
-                    }
-
-                    /* table,tr,td {
-                              border: 1px solid black; 
-                    }
-                    table{
-                              position: absolute;
-                              top: 20px;
-                              right: 20px;
-                    } */
-          </style>
+          <link rel="stylesheet" href="24_3D_lottery.css">
 </head>
 
 <body>
-          <form autocomplete="off">
+          <form>
                     <input type="text" name="userName" placeholder="Enter Your Name" required>
-                    <input type="tel" name="phone" placeholder="09-123456789" value="Phone number"
-                              pattern="[0,9]{2}-[0-9]{9}" title="should use 09- & must be 9 digit after 09-" required>
-                    <label for="totalNumber">How many 3D numbers would you like to get?</label>
-                    <input id="totalNumber" type="number" name="totalNumber" value="1" min="1" max="10">
-                    <button type="button" onclick="numOf3D()">OK</button>
-                    <label>3D number :</label>
-                    <input type="text" name="3d" placeholder="Enter 3D number" pattern="\d{3}" title="must be 3 digit"
-                              required>
-                    <input type="submit" value="Submit">
+                    <input type="tel" name="phone" placeholder="09-123456789" value="Phone" pattern="[0,9]{2}-[0-9]{9}" title="should use 09- & must be 9 digit after 09-" required>
+                    <label for="gen">Click to generate 3D spaces ==> </label>
+                              <button id="gen" onclick="myfun()" type="button">generate</button>                
+                              <div id="list">
+                              <input class="3D1" type="number" name="3D1" pattern="\d{3}" placeholder="Enter 3D number" title="must be 3 digit" required>
+                              </div>
+                    <input type="submit" value="Submit" onclick="checking()">
           </form>
           <script src="24_3D_lottery.js"></script>
 </body>
