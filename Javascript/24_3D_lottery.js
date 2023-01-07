@@ -1,4 +1,4 @@
-let clas = 2;
+let clas = 1;
 let ele  = document.querySelector('.D31');
 
 function myfun(){
@@ -11,8 +11,8 @@ function myfun(){
                     console.log('clone:',clon);
                     console.log('class:',clas);
 
-          clon.className = `D3${clas} D3__spaces`;
-          clon.name      = `D3${clas}`;
+          clon.className = `D3${clas+1} D3__spaces`;
+          clon.name      = `D3${clas+1}`;
           clon.value     = '';
           clas++;
 
@@ -25,18 +25,20 @@ function myfun(){
           }
           list.appendChild(clon);
 }
-
-ele.addEventListener('blur', checking());
+if(clas > 1){
+let ele2 = document.querySelector('.D32');
+ele2.addEventListener('input', checking());
+}
 
 function checking(){
           let D3__inputs = document.querySelectorAll('.D3__spaces');
                     console.log('D3__inputs: ',D3__inputs);
                     console.log('length: ',D3__inputs.length);
-          D3__inputs.addEventListener('input', childChecking(D3__inputs.length));
+          D3__inputs.addEventListener('focusout', childChecking(D3__inputs.length));
           
 
           function childChecking(len){
-                    for(let i=2; i<clas; i++){
+                    for(let i=1; i<len; i++){
                               let check3Dst = document.querySelector(`.D3${i-1}`);
 
                               let check3Dnd = document.querySelector(`.D3${i}`);                    
