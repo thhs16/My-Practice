@@ -40,24 +40,18 @@ function checking2(){
           let D3__inputs = document.querySelectorAll('.D3__spaces');
                     console.log('D3__inputs: ',D3__inputs);
                     console.log('length: ',D3__inputs.length);
-          D3__inputs.addEventListener('focusout', childChecking2);
+          D3__inputs[1].addEventListener('focusout', childChecking2); //
           
 
           function childChecking2(){
                     for(let i=1; i<D3__inputs.length; i++){
-                              let check3Dst = document.querySelector(`.D3${i-1}`);
-
-                              let check3Dnd = document.querySelector(`.D3${i}`);                    
-
-                              console.log('check3Dst:',check3Dst);
-                              console.log('check3Dnd:',check3Dnd);
                     
-                              if(check3Dst.value == check3Dnd.value){
-                                        check3Dnd.title = 'This number has already chosen.';
-                                        check3Dnd.style.border = "1px solid red";
+                              if(D3__inputs[i-1].value == D3__inputs[i].value){
+                                        D3__inputs[i].title = 'This number has already chosen.';
+                                        D3__inputs[i].style.border = "1px solid red";
                               }else{
-                                        check3Dnd.title = 'must be 3 digit';
-                                        check3Dnd.style.border = "2px solid black"; 
+                                        D3__inputs[i].title = 'must be 3 digit';
+                                        D3__inputs[i].style.border = "2px solid black"; 
                               }
                     }
           }
