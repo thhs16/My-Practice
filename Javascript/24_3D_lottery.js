@@ -37,9 +37,11 @@ function checking1(){
 
 function checking2(){
                     console.log('Welcome to checking2() function');
+
           let D3__inputs = document.querySelectorAll('.D3__spaces');
                     console.log('D3__inputs: ',D3__inputs);
                     console.log('length: ',D3__inputs.length);
+                    
           D3__inputs[1].addEventListener('focusout', childChecking2); //
           
 
@@ -49,9 +51,6 @@ function checking2(){
                               if(D3__inputs[i-1].value == D3__inputs[i].value){
                                         D3__inputs[i].title = 'This number has already chosen.';
                                         D3__inputs[i].style.border = "1px solid red";
-                              }else{
-                                        D3__inputs[i].title = 'must be 3 digit';
-                                        D3__inputs[i].style.border = "2px solid black"; 
                               }
                     }
           }
