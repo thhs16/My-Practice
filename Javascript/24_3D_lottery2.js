@@ -1,7 +1,15 @@
-// first attempt don't show red border but second try of focusout works
+// (fixed)first attempt don't show red border but second try of focusout works
+// (fixed)current checking scheme : check 3d focusing by looking at previous 3d space
+// style : outline
+//  to check the value when client add the input as soon as it's already generated
+// focusout-outline : black if value is available
 
 let clas = 1;
 let ele = document.querySelector('.D31');
+let genButt = document.querySelector('#gen');
+
+ele.addEventListener('focusout', checkingfun1);
+// genButt.addEventListener('click', checkingfun1);
 
 function myfun() {
           let list = document.getElementById('list');
@@ -21,46 +29,62 @@ function myfun() {
           // console.log('class after changes :',clas);
           // console.log('name:', clon.name);
 
-          if (clas > 11) {
+          if (clas > 10) {
+                    clas = 10;
                     alert("We only allow 10 spaces. They can't be generated anymore.");
                     return 0;
           }
           list.appendChild(clon);
+
 }
 
-ele.addEventListener('focusout', checkingfun1);
-
 function checkingfun1() {
+                                        console.log('clas:',clas);
           if (clas > 1) {
-                    for (i = 1; i < clas; i++) {
-                              let vaEle = document.querySelector(`.D3${i + 1}`);
-                              console.log(vaEle);
-                              vaEle.addEventListener('input', checkingfun2(i + 1));
+                    for (let i = 1; i < clas; i++) {
+                              let index = i+1;
+                              let vaEle = document.querySelector(`.D3${index}`);
+                                        console.log('vaEle:',vaEle);
+                              vaEle.addEventListener('input', function(){ checkingfun2(index) }); //input works frequently whenever a single input is typed
                     }
           }
 }
 
 function checkingfun2(claNo) {
+          let ele2 = document.querySelector('.D31');
+                    console.log('ele2:',ele2);
           let vaEle2 = document.querySelector(`.D3${claNo}`);
-          console.log('vaEle:', vaEle2);
+                    console.log('vaEle2:', vaEle2);
           // if(ele.value == ''){
           //           return 0;
           // }else{
-          for (j = 1; j < claNo; j++) {
+          for (let j = 1; j < claNo; j++) { // j=2
 
-                    if (ele.value == '') {
-                              console.log('return');
+                    if (ele2.value == '') {
+                                        console.log('return');
 
                               return 0;
-                    } else if (ele.value == vaEle2.value) {
-                              console.log('this is checking');
+                    } else if (ele2.value == vaEle2.value) {
+                                        console.log('this is else if expression');
                               vaEle2.title = 'This number has already chosen.';
-                              vaEle2.style.border = "1px solid red";
+                              vaEle2.style.outline = "2px solid red";
+                              break;
+                    } 
+                    // else if(vaEle2.value = ''){
+                    //           vaEle2.title = 'Must be 3 digit';
+                    //           vaEle2.style.outline = "2px solid black";
+                    // }
+                    else {
+                              vaEle2.title = 'Must be 3 digit.';
+                              vaEle2.style.outline = "2px solid green";
                     }
 
-                    for (k = 2; k < claNo; k++) {
-                              ele = document.querySelector(`.D3${k}`);
-                    }
+                    // for (let k = 2; k < claNo; k++) {
+                    //           ele2 = document.querySelector(`.D3${k}`);
+                    //                     console.log('ele2:',ele2);
+                    // }
+                    ele2 = document.querySelector(`.D3${j+1}`);
+                    
           }
           // }
 }
