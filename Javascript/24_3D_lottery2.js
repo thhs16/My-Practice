@@ -1,8 +1,9 @@
 // (fixed)first attempt don't show red border but second try of focusout works
 // (fixed)current checking scheme : check 3d focusing by looking at previous 3d space
-// style : outline
-//  to check the value when client add the input as soon as it's already generated
+// (done)style : outline
+//  to check the value when client add the input as soon as it has generated
 // focusout-outline : black if value is available
+// 3digit checking
 
 let clas = 1;
 let ele = document.querySelector('.D31');
