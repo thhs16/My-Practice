@@ -88,5 +88,12 @@ function checkingfun2(claNo) {
                     ele2 = document.querySelector(`.D3${j+1}`);
                     
           }
+        /*
+          vaEle2.addEventListener('focusout', ()=>{
+            if(vaEle2.style.outline == "2px solid green"){
+              vaEle2.style.outline = "0px solid black";
+            }
+          });
+        */
           // }
 }
