@@ -4,10 +4,12 @@
 // (done)to check the value when client add the input as soon as it has generated
 // (done)focusout-outline : black if value is available ==> by add red outline option in else expression
 // 3digit checking
+// D31 input addeventlisten-input
+// show text of title attribute under relevant input space
 
-let clas = 1;
+let clas = 1; // heart of this program
 let ele = document.querySelector('.D31');
-let genButt = document.querySelector('#gen');
+// let genButt = document.querySelector('#gen');
 
 // ele.addEventListener('focusout', checkingfun1);
 // genButt.addEventListener('click', checkingfun1);
@@ -46,7 +48,7 @@ function checkingfun1() {
     for (let i = 1; i < clas; i++) {
       let index = i + 1;
       let vaEle = document.querySelector(`.D3${index}`);
-      console.log('vaEle:', vaEle);
+      // console.log('vaEle:', vaEle);
       vaEle.addEventListener('input', function () { checkingfun2(index) }); //input works frequently whenever a single input is typed
     }
   }
@@ -60,48 +62,58 @@ function checkingfun2(claNo) {
   // if(ele.value == ''){
   //           return 0;
   // }else{
-  let check = /^\d{3}$/.test(ele2.value);
-  console.log(check);
-
   let data = '';
-  for (let j = 1; j < claNo; j++) { // j=2
-    if (ele2.value == '') {
-      // console.log('return');
-
-      return 0;
-    } else if (ele2.value == vaEle2.value) {
-      data = 0;
-      // console.log('this is else if expression');
-      vaEle2.title = 'This number has already chosen.';
-      vaEle2.style.outline = "2px solid red";
-      break;
-    }
-    // else if(vaEle2.value = ''){
-    //           vaEle2.title = 'Must be 3 digit';
-    //           vaEle2.style.outline = "2px solid black";
-    // }
-    else {
-      data = 1;
+  let check1 = /^\d{3}$/.test(ele2.value);
+  // console.log(check1);
+  let check2 = /^\d{3}$/.test(vaEle2.value);
+  console.log('check2:',check2); // why check2 is false even after input becomes 3 digit ==> the thing is I missed '.value'.
+  if(check1){
+      if(check2){
+          for (let j = 1; j < claNo; j++) { // j=2
+                if (ele2.value == '') {
+                // console.log('return');
+  
+                return 0;
+              } else if (ele2.value == vaEle2.value) {
+                data = 0;
+                // console.log('this is else if expression');
+                vaEle2.title = 'This number has already chosen.';
+                vaEle2.style.outline = "2px solid red";
+                break;
+              }
+              // else if(vaEle2.value = ''){
+              //           vaEle2.title = 'Must be 3 digit';
+              //           vaEle2.style.outline = "2px solid black";
+              // }
+              else {
+                data = 1;
+                vaEle2.title = '';
+                vaEle2.style.outline = "2px solid green";
+              }
+  
+              // for (let k = 2; k < claNo; k++) {
+              //           ele2 = document.querySelector(`.D3${k}`);
+              //                     console.log('ele2:',ele2);
+              // }
+              ele2 = document.querySelector(`.D3${j + 1}`);
+  
+            }
+    }else{
       vaEle2.title = 'Must be 3 digit.';
-      vaEle2.style.outline = "2px solid green";
+      vaEle2.style.outline = "2px solid red";
     }
-
-    // for (let k = 2; k < claNo; k++) {
-    //           ele2 = document.querySelector(`.D3${k}`);
-    //                     console.log('ele2:',ele2);
-    // }
-    ele2 = document.querySelector(`.D3${j + 1}`);
-
+  }else{
+    ele2.title = 'must be 3 digit';
+    ele2.style.outline = "2px solid red";
   }
 
+  
+
   vaEle2.addEventListener('focusout', () => {
-    console.log('data', data);
     if (data == 1) {
       vaEle2.style.outline = "0px solid green";
     } else {
       vaEle2.style.outline = "2px solid red";
     }
   });
-
-  // }
 }
