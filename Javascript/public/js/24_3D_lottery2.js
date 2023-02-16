@@ -4,6 +4,7 @@
 // (done)to check the value when client add the input as soon as it has generated
 // (done)focusout-outline : black if value is available ==> by add red outline option in else expression
 // (done)3digit checking
+// (done)Files on server
 // D31 input addeventlisten-input
 // show text of title attribute under relevant input space
 
