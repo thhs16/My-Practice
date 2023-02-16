@@ -1,5 +1,5 @@
 var MongoClient = require("mongodb").MongoClient;
-var url = "mongodb+srv://root:toor@testcluster.itzo8sn.mongodb.net/"
+var url = "mongodb+srv://root:toor@testcluster.itzo8sn.mongodb.net/?retryWrites=true&w=majority"
 
 MongoClient.connect(url, function(err, db){
           if(err) throw err;
@@ -20,7 +20,7 @@ MongoClient.connect(url, function(err, db){
                     { name: 'Chuck', address: 'Main Road 989'},
                     { name: 'Viola', address: 'Sideway 1633'}
                   ];
-          dbo.collection("collectionT").insertMany(mydata, function(err, res){
+          dbo.collection("CTest").insertMany(mydata, function(err, res){
                     if(err) throw err;
                     console.log("Number of documents inserted:" + res.insertedCount);
                     db.close();
