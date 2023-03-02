@@ -88,16 +88,16 @@ function checkingfun2(claNo) {
         // }
         else {
           
-          // let dbResult = mongoDB(vaEle2.value);
-          // if(dbResult == []){
+          let dbResult = mgDB(vaEle2.value);
+          if(dbResult == []){
             data = 1;
             vaEle2.title = '';
             vaEle2.style.outline = "2px solid green";
-          // }else{
+          }else{
           
-            // vaEle2.title = 'This number has already chosen by someone.';
-            // vaEle2.style.outline = "2px solid red";
-          // }
+            vaEle2.title = 'This number has already chosen by someone.';
+            vaEle2.style.outline = "2px solid red";
+          }
         }
 
         // for (let k = 2; k < claNo; k++) {
@@ -145,3 +145,16 @@ function checkingfun2(claNo) {
                     return result;
           })
         }*/
+        
+
+        function mgDB(value){
+                    MongoClient.connect(url, async function(err, db){
+                              if(err) throw err;
+                              var dbo = db.db('3Dlottery');
+                              //  mydata = '';
+
+                              const collection = dbo.collection('3Dnum');
+                              var result = await collection.find({num:value}).toArray();
+                              return result;
+                    })
+          }
