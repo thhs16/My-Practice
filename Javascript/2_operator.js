@@ -21,9 +21,9 @@ a-- //a = a-1
 b = 1;
 c = 3;
 
+// comparison operator
 
-console.log(b >= c) // comparison operator
-                    //false
+console.log(b >= c) //false
 
 
 // logical operator &&, ||, !
