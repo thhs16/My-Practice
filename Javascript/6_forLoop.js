@@ -1,4 +1,4 @@
-let i = 0;
+let i = 0; // way better than declaring it inside loop scope
 const data = 10;
 var sum = 0;
           for(i; i<=data; i++){
