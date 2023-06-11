@@ -3,7 +3,19 @@
 
                     for(let z=0; z<i; z++){
 
-                              console.log(`${"*"}`);
+                              // console.log(`${"*"}`);
+                              //console.log(arr.join(''));
+                              process.stdout.write(`${'*'}`);
+
+
+                    }
+                    for(let z=0; z<i; z++){
+
+                              // console.log(`${"*"}`);
+                              //console.log(arr.join(''));
+                              process.stdout.write(`${'#'}`);
+
+
                     }
                     console.log("\n");
           }
