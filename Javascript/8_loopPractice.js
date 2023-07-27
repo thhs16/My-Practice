@@ -20,5 +20,3 @@
                     // console.log("\n"); 
                     console.log("");
           }
-
-          // the output is not quite right yet.

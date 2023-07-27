@@ -1,5 +1,5 @@
 /* 
- Switch-case-break is normally used when the inputs/expression are precise.
+ Switch-case-break is normally used when the inputs/expression(shown as variable) are precise and in low-range.
           switch(variable, expression){
                     case 'sth';
                     -->
