@@ -27,4 +27,4 @@
           myFun(name);
           myFun2();
 
-          adding(4,5);
+          adding(4,"thae");
