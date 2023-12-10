@@ -1,2 +1,0 @@
-// single comment
-/* multiple comment */ 

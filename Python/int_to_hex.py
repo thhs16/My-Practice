@@ -1,8 +1,0 @@
-print("",hex(34))
-print("",format(0x22))
-print("")
-print("",oct(45))
-print("",format(0o55))
-print("")
-print("",bin(22))
-print("",format(0b10110))
