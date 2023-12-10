@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Input</title>
+</head>
+<body>
+          <form>
+                    <label for="bd">Please Enter Your Birth Date : </label>
+                    <input type="date" id="bd" value="1990-01-01" min="1990-01-01" max="2022-01-01">
+                    <br>
+                    <h3>Your chosen date</h3>
+                    <p>yy-mm-dd</p>
+          </form>
+                    <button onclick="setDate()">Set Date</button> <!-- can also use onclick="setDate()"| if we don't use addEventListener-->
+          
+          <script>
+
+                    let inp = document.querySelector("input");
+                    let p   = document.querySelector('p');
+                    let butn = document.querySelector("button");
+
+                    // butn.addEventListener('click', setDate);
+                    function setDate(){
+                              p.textContent = inp.value;
+                    }
+          </script>
+</body>
+</html>

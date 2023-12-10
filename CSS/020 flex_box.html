@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>flex_box</title>
+          <style>
+                    img {
+                              margin: 10px;
+                    }
+                    .container{
+                              width: 950px;
+                              /* Won't work with flex-wrap because the width 1080px is limited.Therefore, max-width is needed. */
+
+                              max-width: 1080px;
+                              /* Default div width is 100% of the page. That's why I can't use the   margin:0 auto;  with div before. */
+                              margin: 50px auto;
+                              display: flex;
+                              flex-direction: row;/*default*/
+                              flex-wrap: wrap;
+                    }
+          </style>
+</head>
+<body>
+          <div class="container">
+                    <img src="../HTML/Web images/turning_red.jpg" height="300px" width="200px" alt="">
+                    <img src="../HTML/Web images/light_year.jpg" height="300px" width="200px" alt="">
+                    <img src="../HTML/Web images/the_lion_king_1994.jpg" height="300px" width="200px" alt="">
+                    <img src="../HTML/Web images/encanto.jpg" height="300px" width="200px" alt="">
+          </div>
+</body>
+</html>

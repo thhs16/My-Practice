@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Yummy - Food Stall</title>
+          <style>
+                    *{
+                              margin: 0;
+                              padding: 0;
+                    }
+                    body{
+                              width: 100%;   
+                    }
+                    section {
+                              width: fit-content;
+                              margin: 50px auto 0;
+                    }
+                    p:first-child{
+                              font-size: 3em;
+                              line-height: 2em;
+                    }
+                    p:nth-child(2){
+                              font-size: 2em;
+                              line-height: 3em;
+                    }
+
+                    .center{
+                              display: block;
+                              width: fit-content;
+                              margin: 0 auto;
+                    }
+          </style>
+</head>
+<body>
+          <!-- Response text doesn't stay long after click -->
+          <header></header>
+
+          <div class="content">
+          <aside></aside>
+
+          <section>
+                    <p class="center">Welcome!</p>
+                    <p class="center">Order food down below</p>
+          
+                    <form class="center">
+                              <label for="food">Select : </label>
+                              <select name="food_offered" id="food">
+                                        <option value="Chicken">Chicken</option>
+                                        <option value="Hamburger">Hamburger</option>
+                                        <option value="Rice bowl">Rice bowl</option>
+                                        <option value="Seeweed soup">Seeweed soup</option>
+                                        <option value="Coca cola">Coca cola</option>
+                              </select>
+                              &nbsp;x&nbsp;
+                              <input type="number" name="quantity" value="1" min="1" max="10">
+                              <button type="submit">submit</button>
+                    </form>
+
+                    <p id="response"></p>
+          </section>
+
+          <aside></aside>
+
+          </div>
+
+          <footer></footer>
+
+          <script>
+                    let select = document.querySelector('select');
+                    let quantity = document.querySelector('input[type="number"]');
+                    let submit = document.querySelector('button');
+                    let response= document.getElementById('response');
+                    let a=3;
+                    submit.addEventListener('click',funcSubmit);
+                    function funcSubmit(){
+                              
+                              if(select.value === 'Chicken'){
+                                        if(quantity.value === '1'){
+                                                  response.textContent = 'Your order is a chicken piece.';
+                                        }else{
+                                                  response.textContent = 'Your order is'+quantity.value+'chicken pieces.';
+                                        }
+                              }else if(select.value === 'Hamburger'){
+                                        if(quantity.value === '1'){
+                                                  response.textContent = 'Your order is a hamburger.';
+                                        }else{
+                                                  response.textContent = 'Your order is'+quantity.value+'hamburgers.';
+                                        }
+                              }
+                    }
+          </script>
+</body>
+</html>

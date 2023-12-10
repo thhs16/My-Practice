@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+</head>
+<body>
+          <form >
+                    <label for="birth">Please choose your birthday!</label>
+                    <input type="date" id="birth" name="birth"
+                              value="2005-01-01"
+                              min="1990-01-01"
+                              max="2009-01-01">
+
+                    <h2>Your chosen date</h2>
+                    <p>yy-mm-dd</p>
+
+                    <h1 id="test">THHS</h1>
+          </form>
+          <button onclick="buttonAction()">Get Date</button>
+
+          <script>
+                    var button = document.querySelector('input[type="date"]');
+                    var paragraph = document.querySelector("p");
+
+                    function buttonAction() {
+                              console.log("hello from buttonAction func");
+                              paragraph.textContent = button.value;
+                              document.getElementById("test").textContent = "InfoTs";
+                    }
+
+          </script>
+</body>
+</html>

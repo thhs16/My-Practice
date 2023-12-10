@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+          <meta charset="UTF-8">
+          <!-- add more meta tags -->
+          <title>My Movie</title>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cute Font|Pangolin|Poor Story&effect=3d|fire-animation">
+          <!-- <link rel="shortcut icon" href="./Web images/"> -->
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+          <style>
+                    body {
+                              cursor: url('./Web images/cursor2.png'), auto;
+                              margin: 0;
+                              background-repeat: no-repeat;
+                              background-image: linear-gradient(to bottom right, rgb(210, 28, 255), #903ffb, #7322fd, #5610fade) ;
+
+                    }
+          /******************************************************************************/
+                    table { 
+                              z-index: 5;
+                              margin: 0;
+                              position: fixed;
+                              box-shadow: 0px 1px 10px black;
+                              width: 100%;
+                              text-align: center;
+                              /* background-image: linear-gradient(to right, rgb(210, 28, 255), #903ffb, #27a8fd, rgb(147, 207, 250)); */
+
+                              background-image: linear-gradient(to right bottom, rgb(210, 28, 255), #903ffb );
+
+                              /* background-color: black; */
+                              
+                    }
+                    table tr td {
+                              width: 10%;
+                              color: white;
+                              font-family: "Cute Font", monospace;
+                              font-size: 24px;
+                              font-weight: bold;
+                    }
+                    table tr td a {
+                              cursor: url('./Web images/pointer2.png'), pointer ;
+                              color: black;
+                              text-decoration: none;
+                    }
+                    table tr td#loco {
+                              width: 20%;
+                              padding-top:5px;
+                    }
+                    table tr td.home {
+                              background-color: rgba(253, 253, 253, 0.3);
+                    }
+                    table tr td#trending {
+                              color:yellow;
+                    }
+                    table tr td#search {
+                              width: 20%;
+                              max-width: 381px; /*25% of 1920px*/
+                    }
+                    table tr td#search div{
+                              /* display: inline; */
+                              margin: auto;
+                              width: 80%;
+                              max-width: 381px;
+                              height: 30px;
+                              background-color: rgba(0, 0, 0, 0.7) ;
+                              border-radius: 20px;
+                    }
+                    table tr td.BgChange:hover {
+                              background-color: rgba(0,0,0,0.2) ;
+                    }
+                    table tr td.BgChange:active {
+                              background-color: rgba(253, 253, 253, 0.3) ;
+                    }
+                    table tr td form input {
+                              float: left !important;
+
+                              width: 50%;
+                              margin: 0;
+                              margin-left: 10px;
+                              padding: 0px;
+                              border: none;
+                              outline: none;
+                              background-color: transparent;
+
+                              color: white;
+                              font-size: 14px;
+                              line-height: 30px;
+                    }
+                    table tr td form button{
+                              float: right !important;
+                              position: relative;
+
+                              width: 50%;
+                              max-width: 20px;
+                              margin: 0;
+                              margin-top: 2px;
+                              margin-right: 5px;
+                              border: none;
+                              padding: 0;
+                              background-color: transparent;
+
+                              font-size: 10px !important;
+                              font-weight: bolder !important;
+                              background: linear-gradient(to left top, rgb(210, 28, 255) 50%, #903ffb 50%);
+                              -webkit-background-clip: text;
+                              -webkit-text-fill-color: transparent;
+                              
+                    }
+          
+          /******************************************************************************/
+                    #promoting_text{
+                              text-align: center;
+                              color: white;
+                              font-family: Pangolin, monospace;
+                              font-size: 25px;
+                              padding:10px;
+                              border: none ;
+                              border-radius: 5px; 
+                              margin-left: 10%;
+                              margin-right: 10%;
+                              background-color: rgba(253, 253, 253, 0.3);
+                              
+                              
+                    }
+         /******************************************************************************/ 
+                    div#new_releases {
+                              position: relative;
+                              /* height: 500px; */
+                              /* background-color: rgba(253, 253, 253, 0.3); */
+                              margin-left: 10%;
+                              margin-right:10%;
+                              padding-top: 20px;
+                              padding-bottom: 20px;
+
+                              background-color: rgba(253, 253, 253, 0.3);
+                    }
+                     /* .sticky_h1 {
+                              position: sticky;
+                              top: 125px;
+                     } */
+                     div#new_releases h1 {
+                           /* z-index: -1; */
+                           display: inline;
+                           position: relative;
+                           left: -20px;
+                           background-color: rgba(0, 0, 0, 0.5);
+                           padding: 10px;
+                           color: white;
+                           font-family: Pangolin, sans-serif;
+                           text-decoration: none;
+                           line-height: 75px;
+                           /* background-color: black;
+                           transform: rotate(-30deg); */
+                    }
+                    .h1_before {
+                           /* z-index: 2; */
+                           position: absolute;
+                           top: 87px;
+                           left: -20px;
+                           border-bottom: 10px solid transparent;
+                           border-top: 10px solid rgba(0, 0, 0, 0.7);
+                           border-left: 10px solid transparent;
+                           border-right: 10px solid rgba(0, 0, 0, 0.7);
+                    }
+                    /* div#new_releases h1::before {
+
+                           content: "";
+                           position: absolute;
+                           top: -20px;
+                           left: 0px;
+                           border-top: 10px solid transparent;
+                           border-bottom: 10px solid gray;
+                           border-left: 10px solid transparent;
+                           border-right: 10px solid gray;
+                    } */
+                    div#new_releases h1::after {
+                           content: "";
+                           position: absolute;
+                           left: 100%;
+                           bottom: 0px;
+                           border-top: 29.5px solid transparent;
+                           border-bottom: 29.5px solid transparent;
+                           border-left: 29.5px solid rgba(0, 0, 0, 0.5);
+                           border-right: 29.5px solid transparent;
+
+                    }
+                    div#new_releases a img {
+                           cursor: url('./Web images/pointer2.png'), pointer ;
+                           align-items: center;
+                           margin: 15px;
+                           border-radius: 5px;  
+                    }
+                    div#new_releases a img:hover {
+                             /* background-image: linear-gradient(to bottom, skyblue,blue);;
+                             -webkit-background-clip: border-box;
+                             border: 5px solid transparent; */
+                             outline: 4px solid whitesmoke;
+                    }
+         /******************************************************************************/
+                    div#trending {
+                     position: relative;
+                              /* height: 500px; */
+                              /* background-color: rgba(253, 253, 253, 0.3); */
+                              margin-left: 10%;
+                              margin-right:10%;
+                              margin-top: 100px;
+                              padding-top: 20px;
+                              padding-bottom: 20px;
+
+                              background-color: rgba(253, 253, 253, 0.3);
+                    }
+                    div#trending h1{
+                       /* z-index: -1; */
+                           display: inline;
+                           position: relative;
+                           left: -20px;
+                           background-color: rgba(0, 0, 0, 0.5);
+                           padding: 10px;
+                           color: white;
+                           font-family: Pangolin, sans-serif;
+                           text-decoration: none;
+                           line-height: 75px;
+                           /* background-color: black;
+                           transform: rotate(-30deg); */
+                    }
+                    div#trending h1::after {
+                           content: "";
+                           position: absolute;
+                           left: 100%;
+                           bottom: 0px;
+                           border-top: 29.5px solid transparent;
+                           border-bottom: 29.5px solid transparent;
+                           border-left: 29.5px solid rgba(0, 0, 0, 0.5);
+                           border-right: 29.5px solid transparent;}
+                    div#trending a img{
+                                    cursor: url('./Web images/pointer2.png'), pointer ;
+                                    margin: 15px;
+                                    border-radius: 5px;
+                    }
+                    div#trending a img:hover {
+                       outline: 4px solid whitesmoke;
+                    }
+
+         /******************************************************************************/
+                    a.see_more {
+                              text-decoration: none;
+                    }
+                    a.see_more div{
+                              cursor: url('./Web images/pointer2.png'), pointer ;
+                              /* display: inline; */
+                              float: right;
+                              /* width: 200px; */
+                              width: 200px;
+                              margin-top: 15px;
+                              margin-left: -55px;
+                              margin-right: 323px;
+                              padding-top: 110px;
+                              padding-bottom: 102px;
+                              border: none;
+                              border-radius: 5px;
+                              background-color: rgba(253, 253, 253, 0.5);
+                              text-align: center;
+                              color: black;
+                              font-family: Pangolin, monospace;
+                    }
+                    a.see_more div:hover {
+                              color: black;
+                              /* background-image: linear-gradient(to right, rgb(210, 28, 255), #903ffb ); */
+                              background-color: white;
+                    }
+                     button#go_to_top {
+                              cursor: url('./Web images/pointer2.png'), pointer ;
+                              position: fixed;
+                              top: 90%;/*must*/
+                              bottom: 5%;
+                              left: 95%;/*must*/
+                              width: 35px;
+                              height: 35px;
+                              padding-top: 7px;
+                              padding-bottom: 5px;
+                              padding-left: 4px;
+                              padding-right: 3px;
+                              border: none;
+
+                              text-align: center;
+                              background-color: white;
+                              border-radius: 10px;
+                    }
+                    button#go_to_top:hover {
+                              background-image: linear-gradient(to bottom, rgb(210, 28, 255), #903ffb );
+                    }
+                    button#go_to_top:active {
+                              border: 1px dashed white;
+                    }
+                    
+                    footer {
+                              margin-top: 30px;
+                              padding-top: 20px;
+                              padding-bottom: 20px;
+                              text-align: center;
+                              color: white;
+                              font-family: Pangolin, monospace;
+                              background-color: black;
+                    }
+
+          </style>
+          <!-- <script> 
+             //Get the button
+               var mybutton = document.getElementById("go_to_top");
+
+            // When the user scrolls down 20px from the top of the document, show the button
+               window.onscroll = function() {scrollFunction()};
+
+               function scrollFunction() {
+               if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                  mybutton.style.display = "block";
+               } else {
+                  mybutton.style.display = "none";
+               }
+               }
+          </script> -->
+</head>
+<body>
+<!-- navigation bar -->
+<nav>
+          <table border="0" cellspacing="0" cellpadding="0" >
+           <tr>
+          <!--1-->  <td id="loco">
+                              <a href="#" >
+                                        <img src="./Web images/2 mm loco 3.png" width="200px" alt="img not found" title="Home" > </a>      </td>
+
+          <!--2-->  <td class="BgChange home">
+                              <a class="font-effect-3d" href="#">Home</a></td>
+          <!--3-->  <td class="BgChange">
+                              <a class="font-effect-3d" href="#">Trending</a>   </td>
+          <!--4-->  <td class="BgChange">
+                              <a class="font-effect-3d" href="#">Latest</a>   </td>
+                    <td class="BgChange">
+                              <a class="font-effect-3d" href="#">Genres</a>   </td>
+          
+          <!--6-->  <td class="BgChange">
+                              <a class="font-effect-3d" href="./MM_about.html">About</a>   </td>
+
+          <!--7-->  <td id="search"> 
+                              <div>
+                              <form action="https://www.google.com/search" method="POST" autocomplete="off">
+                                        <input type="text" name="q" placeholder="Search...">
+                                        <button type="submit"><span class="material-icons" name="submit">search</span></button>
+                              </form>
+                              </div>
+                    </td>
+
+          <!--8-->  <td class="BgChange"><a class="font-effect-3d" href="My Movie Website/Login MM2.html">Account</a>
+                           </td>
+           </tr>
+          </table>
+          </nav>
+<!-- promoting text -->
+<a id="go_to_top" ></a>
+          <br><br><br><br><br><br><br>
+                 <p id="promoting_text">
+                    In this website, you can watch&nbsp; <b>various animation movies</b> &nbsp;.Come and enjoy watching in high quality.<br>No worry, this is completely free.
+                 </p>
+<!-- Movie List -->
+<!-- Latest Movies -->
+   <div id="new_releases" >
+      <span class="sticky_h1">
+         <span class="h1_before"></span>
+         <h1>&nbsp;&nbsp;Latest Movies</h1>
+      </span>
+   <center>
+         <br>
+         <a href="My Movie Website/MM_the_bad_guys_movie.html" target="_self">
+            <img src="./Web images/the_bad_guys.jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/encanto.jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/turning_red.jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/hotel_transylvania:transformania.jpg" height="300px" width="200px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/raya_and_the_last_dragon.jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/sonic_the_hedgehog.jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/the_boss_baby:_family_business.jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/soul.jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/the_mitchells_vs._the_machines.jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/chip'n_dale:_rescue_rangers.jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a class="see_more" href="#">
+            <div><img src="./Web images/plus.svg" height="50px" alt="img not found"></div></a>
+   </center>
+   </div>
+<!-- Trending -->
+   <div id="trending">
+      <span class="sticky_h1">
+         <span class="h1_before"></span>
+         <h1>&nbsp;&nbsp;Trending Movies</h1>
+      </span>
+   <center>
+         <br>
+         <a href="#">
+            <img src="./Web images/chip'n_dale:_rescue_rangers.jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/the_bad_guys.jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/the_bob's_burgers_movie.jpg" width="200px"height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/light_year.jpg" width="200px" height="300px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/Sing2.jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/encanto.jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/turning_red.jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/spider-man:_into_the_spider-verse .jpg" width="200px" height="300px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/who_framed_roger_rabbit.jpg" width="200px" alt="img not found"></a>
+
+         <a href="#">
+            <img src="./Web images/the_lion_king_1994.jpg" width="200px" alt="img not found"></a>
+
+         <a class="see_more" href="#">
+            <div><img src="./Web images/plus.svg" height="50px" alt="img not found"></div></a>
+   </center>
+   </div>
+         <a href="#go_to_top">
+         <button id="go_to_top" >
+            <img src="./Web images/go-to-top.png" height="20px" >
+               </button></a>
+
+</body>
+<footer>
+   All rights Reserved ©
+</footer>
+</html>

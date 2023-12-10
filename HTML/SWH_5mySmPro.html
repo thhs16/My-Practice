@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+          <h1>Javascript Class Methods</h1>
+          <h2>How old am I?</h2>
+
+          <p id="demo"></p>
+          <script>
+
+                    class Car {
+                              constructor(name, year) {
+                                        this.name = name;
+                                        this.year = year;
+                              }
+                              age() {
+                                        const date = new Date();
+                                        return date.getFullYear() - this.year;
+                              }
+                    }
+                    const myCar = new Car("THHS", 2005);
+                    console.log(myCar.age()); // show return data without using var
+                    document.getElementById("demo").innerHTML =
+                              "I am " + myCar.name + ". And, " + myCar.age() + " years old.";
+          </script>
+
+
+
+
+</body>
+
+</html>

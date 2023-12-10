@@ -1,0 +1,9 @@
+// Comparison Operator  (input - boolean)
+
+// ==
+// ===
+// !=
+// <
+// >
+// >=
+// <=

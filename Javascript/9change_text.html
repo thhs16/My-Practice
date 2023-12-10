@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Change Text</title>
+</head>
+<body>
+          <h1 id="hello">Hello</h1>
+          <button onclick="changeText()">Change Text!</button>
+
+          <p id="para">Lorem ipsum dolor sit amet.</p>
+          <button onclick="changeInfo()">Change Info</button>
+
+          <script>
+                    function changeText(){
+                              document.getElementById("hello").innerHTML = "Ballo";
+                    }
+
+                    function changeInfo(){
+                              document.getElementById("para").innerHTML = "Have a wonderful day";
+                              
+                    }
+          </script>
+</body>
+</html>
